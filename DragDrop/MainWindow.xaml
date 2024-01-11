@@ -1,0 +1,31 @@
+﻿<Window x:Class="DragDrop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DragDrop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid>
+        
+        <StackPanel Width="200" Height="200"
+                    AllowDrop="True" DragEnter="StackPanel_DragEnter" 
+                    DragLeave="StackPanel_DragLeave"
+                    Drop="StackPanel_Drop" DragOver="PanelDragDrop_DragOver"
+                    Background="Beige" Name="PanelDragDrop"
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top"  Margin="25">
+            <Border BorderBrush="Beige" />
+            <Rectangle SizeChanged="Rectangle_SizeChanged" />
+            <Button x:Name="ButtonFile" Click="ButtonFile_Click" Width="200" Height="200"
+                    Content="Нажмите или перетащите сюда" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+        </StackPanel>
+        
+        <Label Name="LabelLineFile" HorizontalAlignment="Left" 
+               VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" 
+               ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        
+    </Grid>
+</Window>
